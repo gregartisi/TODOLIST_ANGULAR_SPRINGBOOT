@@ -1,0 +1,8 @@
+<H1>Welcome!</H1>
+<div class="container">Bonjour {{name}}, vous pouvez gerer votre Todolist <a routerLink="/todos">ICI.</a></div>
+
+<div class="container">
+    Cliquez ici pour personaliser le message d'acceuil
+    <button (click)=getWelcomeMessage() class="btn btn-success">Get Welcome message!</button>
+    <br>{{welcome}}
+</div>

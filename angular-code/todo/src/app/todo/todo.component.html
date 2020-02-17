@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>TODO:</h1>
+    <div class="alert alert-warning" *ngIf="todoForm.invalid">Veuillez remplir tous les champs.</div>
+
+    <form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+        <fieldset class="form-group">
+            <label for="definition">Description:</label><input type="text" class="form-control" name="definition" [(ngModel)]="task.definition" required="required"/>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="deadline">Date limite:</label><input type="date" class="form-control" name="deadline" [ngModel]="task.deadline | date:'yyyy-MM-dd'" (ngModelChange)="task.deadline=$event" required="required"/>
+        </fieldset>
+        <button type="submit"  class="btn btn-success">Enregistrer</button>
+    </form>
+</div>
